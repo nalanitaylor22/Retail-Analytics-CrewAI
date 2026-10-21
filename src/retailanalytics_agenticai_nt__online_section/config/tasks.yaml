@@ -1,0 +1,27 @@
+---
+analyze_retail_performance_data:
+  description: 'Using the Analytics Context Summary PDF at {pdf_link}, read and extract
+    the following: the 3 hypotheses and whether they were supported or contradicted,
+    the KPI snapshot including current year and prior year sales and percent change,
+    the top performing and worst performing categories and regions, and the forecast
+    direction. Then answer these strategic questions: {questions}. Assigned to: Retail
+    Analytics Specialist'
+  expected_output: A structured summary of the 3 hypotheses (supported or contradicted),
+    the KPI snapshot with current-year vs. prior-year sales and percent change, the
+    top- and worst-performing categories and regions, the forecast direction, and
+    answers to the strategic questions, using only verified numbers from the PDF.
+  agent: retail_analytics_specialist
+draft_and_send_executive_email:
+  description: 'Using the findings from the Retail Analytics Specialist, draft a professional
+    executive email addressed to retail leadership. The email must include: 3 main
+    findings with real numbers, 3 actionable recommendations, and 1 caution about
+    data limitations. The tone should be professional, concise, and executive-ready.
+    Avoid generic advice and invented numbers. After drafting the email, use the Gmail
+    tool to actually send it to {recipient_email}. Sign the email from {student_name}.'
+  expected_output: 'A fully written executive email sent to {recipient_email} summarizing
+    retail performance findings and recommendations
+
+    '
+  agent: business_strategy_advisor_communicator
+  context:
+  - analyze_retail_performance_data

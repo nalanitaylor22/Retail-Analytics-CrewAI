@@ -1,0 +1,28 @@
+[project]
+name = "retailanalytics_agenticai_nt__online_section"
+version = "0.1.0"
+description = "retailanalytics_agenticai_nt__online_section using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[file-processing,litellm,tools]>=1.15.27,<2.0.0",
+]
+
+[project.scripts]
+retailanalytics_agenticai_nt__online_section = "retailanalytics_agenticai_nt__online_section.main:run"
+run_crew = "retailanalytics_agenticai_nt__online_section.main:run"
+train = "retailanalytics_agenticai_nt__online_section.main:train"
+replay = "retailanalytics_agenticai_nt__online_section.main:replay"
+test = "retailanalytics_agenticai_nt__online_section.main:test"
+run_with_trigger = "retailanalytics_agenticai_nt__online_section.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
+project_id = "1bedf39a-43c9-4649-b50e-7fccda3d4c94"
+
+[tool.uv]
+override-dependencies = ["litellm<=1.82.6"]
